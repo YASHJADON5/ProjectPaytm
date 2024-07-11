@@ -63,6 +63,5 @@ const account= mongoose.model('account', accountSchema)
 
 module.exports = {
     user,
-    // account
     account
 };
