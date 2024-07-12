@@ -54,14 +54,14 @@ userRouter.post('/signup' , async (req,res) => {
 
     const userId= User._id;
     
-    // const token = jwt.sign({
-    //     userId
-    // },JWT_SECRET)
+    const token = jwt.sign({
+        userId
+    },JWT_SECRET)
 
     // throw new Error('the code is malacious');
     res.status(200).send({
         message:"user created",
-        // token:token
+        token:token
     })
 
     const Balance = 1 + Math.random() * 10000;

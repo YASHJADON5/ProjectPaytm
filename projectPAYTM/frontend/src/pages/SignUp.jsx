@@ -1,0 +1,39 @@
+import React from 'react'
+import MainHeading from '../components/MainHeading'
+import SubHeading from '../components/SubHeading'
+import InputBox from '../components/InputBox'
+import Example from '../components/Buttton'
+import BottomWarning from '../components/BottomWarning'
+
+
+function SignUp() {
+  return (
+    <div className='bg-alzari-crimson flex justify-center items-center h-screen w-full'>
+      
+
+      <div className='bg-zinc-200 w-1/3  rounded-md  '>
+
+      <div className='text-center m-6  rounded-md'>
+      
+      <MainHeading label={"Sign Up"}></MainHeading>
+      <SubHeading label={"Enter your details to create an account"}></SubHeading>
+      <InputBox label={"First Name"} placeholder={"John"}></InputBox>
+      <InputBox label={"Last Name"} placeholder={"Barr"}></InputBox>
+      <InputBox label={"Email"} placeholder={"example123@gmail.com"}></InputBox>
+      <InputBox label={"Password"} placeholder={"1234@*car"}></InputBox>
+      <Example label={"SIGN UP"}></Example>
+      <BottomWarning label={"Already have an account?"} buttontxt={"Sign In"} to={"/signin"}></BottomWarning>
+
+
+          
+
+
+      </div>
+
+      </div>
+     
+    </div>
+  )
+}
+
+export default SignUp
