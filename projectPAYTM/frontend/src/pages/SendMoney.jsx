@@ -3,6 +3,7 @@ import MainHeading from '../components/MainHeading'
 import InputBox from '../components/InputBox'
 import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../assets/Base_Url'
 
 
 
@@ -69,7 +70,7 @@ function SendMoney() {
 
                   
                  <button onClick={()=>{
-                     axios.post("http://localhost:5242/api/v1/account/transfer",{
+                     axios.post(`${Base_Url}/api/v1/account/transfer`,{
                        to:Id,
                       amount
                      },{

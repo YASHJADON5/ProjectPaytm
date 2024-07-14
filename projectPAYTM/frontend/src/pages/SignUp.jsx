@@ -40,7 +40,7 @@ function SignUp() {
               setPassword(e.target.value)
       }} label={"Password"} placeholder={"1234@*car"}></InputBox>
       <Example   onClick={async ()=>{
-        const response=await axios.post("http://localhost:5242/api/v1/users/signup",{
+        const response=await axios.post(`${Base_Url}/api/v1/users/signup`,{
           username:username,
           password:password,
           firstname:firstName,

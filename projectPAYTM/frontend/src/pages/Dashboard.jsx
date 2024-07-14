@@ -3,6 +3,7 @@ import Appbar from '../components/Appbar'
 import Balance from '../components/Balance'
 import User from '../components/User'
 import axios from 'axios'
+import { BASE_URL } from '../assets/Base_Url'
 
 
 
@@ -25,7 +26,7 @@ function Dashboard() {
 
   useEffect(()=>{
     const token= localStorage.getItem("token")
-       const response= axios.get("http://localhost:5242/api/v1/account/balance",{
+       const response= axios.get(`${Base_Url}/api/v1/account/balance`,{
         headers:{
           "authorization":`Bearer ${token}`
         }
