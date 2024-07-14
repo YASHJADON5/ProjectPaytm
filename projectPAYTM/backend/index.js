@@ -13,9 +13,9 @@ app.use(express.json());
 
 app.use('/api/v1', router);
 
-const port= 5242;
+const PORT= process.env.PORT || 5242;
 
-app.listen(port,()=>{
+app.listen(PORT,()=>{
     console.log("server is listening");
 })
 

@@ -166,8 +166,8 @@ userRouter.put('/user',authMiddleware ,async (req,res)=>{
 
 })
 
-userRouter.get('/bulk', async(req,res)=>{
-
+userRouter.get('/bulk', authMiddleware, async(req,res)=>{
+     
     const filter = req.query.filter;
 
     const User = await user.find({
@@ -181,7 +181,7 @@ userRouter.get('/bulk', async(req,res)=>{
             lastname:{
                 "$regex":filter
             }
-
+        
         }]
   
 

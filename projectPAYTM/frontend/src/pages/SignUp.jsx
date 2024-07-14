@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainHeading from '../components/MainHeading'
 import SubHeading from '../components/SubHeading'
 import InputBox from '../components/InputBox'
 import Example from '../components/Buttton'
 import BottomWarning from '../components/BottomWarning'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 function SignUp() {
+   
+  const [firstName,setFirstName] = useState("");
+  const [lastName,setLastName] = useState("");
+  const [username,setUsername] = useState("");
+  const [password,setPassword] = useState("");
+  const navigate=  useNavigate()
+
+
   return (
     <div className='bg-alzari-crimson flex justify-center items-center h-screen w-full'>
       
@@ -17,15 +27,34 @@ function SignUp() {
       
       <MainHeading label={"Sign Up"}></MainHeading>
       <SubHeading label={"Enter your details to create an account"}></SubHeading>
-      <InputBox label={"First Name"} placeholder={"John"}></InputBox>
-      <InputBox label={"Last Name"} placeholder={"Barr"}></InputBox>
-      <InputBox label={"Email"} placeholder={"example123@gmail.com"}></InputBox>
-      <InputBox label={"Password"} placeholder={"1234@*car"}></InputBox>
-      <Example label={"SIGN UP"}></Example>
+      <InputBox  onChange={(e)=>{
+              setFirstName(e.target.value)
+      }}label={"First Name"} placeholder={"John"}></InputBox>
+      <InputBox onChange={(e)=>{
+              setLastName(e.target.value)
+      }} label={"Last Name"} placeholder={"Barr"}></InputBox>
+      <InputBox onChange={(e)=>{
+              setUsername(e.target.value)
+      }} label={"Email"} placeholder={"example123@gmail.com"}></InputBox>
+      <InputBox onChange={(e)=>{
+              setPassword(e.target.value)
+      }} label={"Password"} placeholder={"1234@*car"}></InputBox>
+      <Example   onClick={async ()=>{
+        const response=await axios.post("http://localhost:5242/api/v1/users/signup",{
+          username:username,
+          password:password,
+          firstname:firstName,
+          lastname:lastName
+        })
+        localStorage.setItem("token", response.data.token)
+        navigate('/dashboard')
+        
+
+      }} ></Example>
       <BottomWarning label={"Already have an account?"} buttontxt={"Sign In"} to={"/signin"}></BottomWarning>
 
 
-          
+        
 
 
       </div>

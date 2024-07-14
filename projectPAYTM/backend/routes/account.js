@@ -96,7 +96,7 @@ accountRouter.post('/transfer',authMiddleware, async (req,res)=>{
         userId:req.userId
     }).session(session)
 
-    if(amount > transferedByAccount.balance){
+    if(transferedByAccount.balance<amount){
         await session.abortTransaction()
         res.status(400).json({
             message:"insufficient amount"
@@ -111,7 +111,7 @@ accountRouter.post('/transfer',authMiddleware, async (req,res)=>{
     if(!transferedtoAccount){
        await  session.abortTransaction()
         res.status(400).json({
-            message:"invalid account"
+            message:"invalid account hai"
         })
     }
 

@@ -7,6 +7,7 @@ function BottomWarning({label,buttontxt,to}) {
     <div className='pt-3'>
         <div>
         {label}
+        
         </div>
         <Link className='underline text-blue-700' to={to}>
          {buttontxt}
