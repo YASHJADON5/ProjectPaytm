@@ -1,1 +1,1 @@
-export const Base_URL = "https://projectpaytm-backend.onrender.com"
+export const Base_Url = "https://projectpaytm-backend.onrender.com"

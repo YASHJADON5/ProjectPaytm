@@ -3,7 +3,7 @@ import MainHeading from '../components/MainHeading'
 import InputBox from '../components/InputBox'
 import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
-import { Base_URL } from '../assets/Base_Url'
+import { Base_Url } from '../assets/Base_Url'
 
 
 
