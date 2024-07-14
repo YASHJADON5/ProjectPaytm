@@ -6,7 +6,7 @@ import Example from '../components/Buttton'
 import BottomWarning from '../components/BottomWarning'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { BASE_URL } from '../assets/Base_Url'
+import { Base_URL } from '../assets/Base_Url'
 
 
 function SignUp() {
