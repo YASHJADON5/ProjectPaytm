@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Appbar from '../components/Appbar'
-import Balance from '../components/Balance'
-import User from '../components/User'
+import Appbar from '../../src/components/Appbar'
+import Balance from '../../src/components/Balance'
+import User from '../../src/components/User'
 import axios from 'axios'
-import { Base_Url } from '../assets/Base_Url'
+import { Base_Url } from '../../src/assets/Base_Url'
 
 
 

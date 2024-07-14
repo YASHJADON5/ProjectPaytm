@@ -15,6 +15,8 @@ import SendMoney from './pages/SendMoney'
 
 
 
+
+
 function App() {
   
 
@@ -23,11 +25,11 @@ function App() {
     <BrowserRouter>
         
         <Routes>
-
-          <Route path="signup" element={<SignUp />}/>
-          <Route path="signin" element={<SignIn />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="send" element={<SendMoney />} />
+          <Route path="/" element={<SignUp />}></Route>
+          <Route path="/signup" element={<SignUp />}/>
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/send" element={<SendMoney />} />
 
         </Routes>
   

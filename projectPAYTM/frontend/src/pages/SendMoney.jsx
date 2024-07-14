@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import MainHeading from '../components/MainHeading'
-import InputBox from '../components/InputBox'
+import MainHeading from '../../src/components/MainHeading'
+import InputBox from '../../src/components/InputBox'
 import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
-import { Base_Url } from '../assets/Base_Url'
+import { Base_Url } from '../../src/assets/Base_Url'
 
 
 
@@ -60,7 +60,7 @@ function SendMoney() {
                         value={amount}
                         type="number"
                         class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-                        id="amount"
+                        
                         placeholder="Enter amount"
                     />
                     </div>

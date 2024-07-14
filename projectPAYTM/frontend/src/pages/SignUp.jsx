@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import MainHeading from '../components/MainHeading'
-import SubHeading from '../components/SubHeading'
-import InputBox from '../components/InputBox'
-import Example from '../components/Buttton'
-import BottomWarning from '../components/BottomWarning'
+import MainHeading from '../../src/components/MainHeading'
+import SubHeading from '../../src/components/SubHeading'
+import InputBox from '../../src/components/InputBox'
+import Example from '../../src/components/Buttton'
+import BottomWarning from '../../src/components/BottomWarning'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { Base_Url } from '../assets/Base_Url'
+import { Base_Url } from '../../src/assets/Base_Url'
 
 
 function SignUp() {
