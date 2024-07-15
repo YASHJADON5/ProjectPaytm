@@ -15,6 +15,7 @@ import { Base_Url } from '../../src/assets/Base_Url'
 
 function Dashboard() {
   const [balance,setBalance] =useState(0)
+  const [id,setId] =useState(null)
 
   const formatNumber = (num) => {
   
@@ -33,6 +34,12 @@ function Dashboard() {
        })
        .then((response)=>{
         setBalance(response.data.balance)
+        console.log('Balance:', response.data.balance);
+        // console.log(balance)
+        setId(response.data.Id)
+        // console.log(id)
+
+
        })
   },[balance])
 
@@ -41,7 +48,7 @@ function Dashboard() {
      <Appbar></Appbar>
       
       <div className='m-8'>
-        <Balance amount={formatNumber(balance)}></Balance>
+        <Balance amount={formatNumber(balance)} Id={id}></Balance>
         <User></User>
 
       </div>

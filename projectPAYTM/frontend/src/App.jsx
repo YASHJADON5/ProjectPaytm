@@ -13,6 +13,10 @@ import Dashboard from './pages/Dashboard'
 
 import SendMoney from './pages/SendMoney'
 
+import AddMoney from './pages/AddMoney'
+
+
+
 
 
 
@@ -30,6 +34,8 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/send" element={<SendMoney />} />
+          <Route path="/addmoney" element={<AddMoney />} />
+
 
         </Routes>
   

@@ -14,7 +14,9 @@ accountRouter.get("/balance", authMiddleware, async (req,res)=>{
     });
 
     res.json({
-        balance: Account.balance
+        balance: Account.balance,
+        Id:req.userId
+
     })
 
  
@@ -146,6 +148,38 @@ accountRouter.post('/transfer',authMiddleware, async (req,res)=>{
 
 
 
+
+
+})
+
+
+accountRouter.put('/addbalance',authMiddleware, async(req,res)=>{
+    
+    const userid= req.userId;
+    
+    const {amount,Id} = req.body
+
+    const Account = await account.findOne({
+        userId:userid
+    })
+
+    if(!Account){
+        res.status(403).json({
+            message:"Account not found"
+        })
+    }
+
+    await account.updateOne({
+        userId:userid
+    },{
+        $inc:{
+            balance:amount
+        }
+    })
+
+    res.status(200).json({
+        message:"balance updated"
+    })
 
 
 })
